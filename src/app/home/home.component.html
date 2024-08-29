@@ -1,0 +1,47 @@
+<div align='center'><h1>Minesweeper Game Application with Angular & Spring Boot</h1></div>
+<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+<div>
+  <table class="table" style="width: 100%">
+    <tr>
+      <th>Id</th>
+      <th>Size</th>
+      <th>Mines</th>
+      <th>Remaining Cells</th>
+      <th>Timer</th>
+      <th>Status</th>
+      <th>Last Updated</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let game of games">
+      <td>
+        {{game.id}}
+      </td>
+      <td>
+        {{game.size}}
+      </td>
+      <td>
+        {{game.mines}}
+      </td>
+      <td>
+        {{game.remainingCells}}
+      </td>
+      <td>
+        {{game.timer}}
+      </td>
+      <td>
+        {{game.status}}
+      </td>
+      <td>
+        {{game.lastUpdated}}
+      </td>
+      <td>
+        <button  type="button" (click)="playGame(game)">Play</button>
+        <button  type="button" (click)="deleteGame(game)">Delete</button>
+       </td>
+    </tr>
+  </table>
+</div>
+<div>
+    <button (click)="newGame()">New Game</button>
+    <button (click)="deleteAllGames()">Delete All</button>
+</div>

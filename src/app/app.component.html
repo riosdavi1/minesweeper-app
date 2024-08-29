@@ -1,0 +1,11 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div align='right'>Username: {{currentUser.username}}</div>
+  <button (click)="logout()" class="btn btn-primary">Logout</button>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
